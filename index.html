@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6826a8">
+<title>Un mois de novembre merveilleux ✨</title>
+<style>
+:root{--violet:#6826a8;--deep:#24103e;--pink:#f3a6d5;--gold:#ffd879;--white:#fff}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#fff;background:radial-gradient(circle at 15% 10%,#a65be0 0,transparent 32%),radial-gradient(circle at 90% 80%,#a63c91 0,transparent 35%),linear-gradient(145deg,#24103e,#512080 55%,#301044);display:grid;place-items:center;padding:22px;overflow-x:hidden}
+.glow{position:fixed;width:230px;height:230px;border-radius:50%;filter:blur(70px);opacity:.25;pointer-events:none;background:#e7a3ff;animation:float 8s ease-in-out infinite alternate}.g1{top:-70px;right:-60px}.g2{bottom:-90px;left:-70px;background:#ff9ecb;animation-delay:2s}
+.card{position:relative;width:min(100%,520px);padding:34px 25px 28px;text-align:center;border:1px solid #ffffff35;border-radius:28px;background:#ffffff12;box-shadow:0 22px 70px #12051e80;backdrop-filter:blur(12px);animation:appear 1s ease both}
+.kicker{font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:#f7c8ec;font-weight:700}.spark{font-size:2rem;margin:12px 0 4px;animation:pulse 2s infinite}.month{font-family:Georgia,serif;font-size:clamp(2.8rem,12vw,4.5rem);line-height:1;margin:8px 0;color:#fff;text-shadow:0 5px 25px #e7a3ff75}.month span{display:block;color:var(--gold);font-size:.48em;letter-spacing:7px;margin-top:12px}.line{width:74px;height:3px;border-radius:5px;background:linear-gradient(90deg,var(--pink),var(--gold));margin:23px auto}
+.intro{font-size:1.06rem;line-height:1.75;color:#f8edff;margin:0 auto;max-width:390px}.highlight{color:var(--gold);font-weight:750}.wish{margin:22px 0 0;padding:19px 17px;border-radius:18px;background:#ffffff12;border:1px solid #ffffff22;line-height:1.75;color:#fff;display:none;animation:appear .7s ease}.wish.show{display:block}.wish p{margin:7px 0}.btn{margin-top:24px;border:0;border-radius:999px;padding:15px 23px;background:linear-gradient(100deg,#f1a5d5,#ffd879);color:#38134f;font-size:1rem;font-weight:800;box-shadow:0 8px 25px #17072255;cursor:pointer;transition:transform .2s}.btn:active{transform:scale(.96)}.signature{margin-top:23px;color:#e9d4f6;font-size:.85rem}.stars{position:fixed;inset:0;pointer-events:none;overflow:hidden}.star{position:absolute;color:#fff;opacity:.65;animation:twinkle 3s infinite ease-in-out}.footer{font-size:.76rem;color:#d9c2e9;margin-top:12px}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{50%{transform:scale(1.12)}}@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:.9;transform:scale(1.2)}}@keyframes float{to{transform:translate(35px,45px) scale(1.2)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<div class="stars" aria-hidden="true"><span class="star" style="top:9%;left:12%;animation-delay:.2s">✦</span><span class="star" style="top:18%;right:13%;animation-delay:1s">✧</span><span class="star" style="top:72%;left:8%;animation-delay:1.7s">✦</span><span class="star" style="top:82%;right:10%;animation-delay:.6s">✧</span><span class="star" style="top:43%;right:5%;animation-delay:2s">✦</span></div>
+<main class="card">
+  <div class="kicker">Une nouvelle page commence</div>
+  <div class="spark">✨ 💜 ✨</div>
+  <h1 class="month">Hello<span>NOVEMBRE</span></h1>
+  <div class="line"></div>
+  <p class="intro">Que ce nouveau mois t'apporte de belles surprises, de la paix dans le cœur et mille raisons de sourire.</p>
+  <p class="intro" style="margin-top:12px">Et surtout… que chaque jour te rapproche un peu plus de ce qui te rend heureuse. 🌷</p>
+  <button class="btn" id="reveal" type="button">Découvrir ton message 💌</button>
+  <section class="wish" id="wish" aria-live="polite">
+    <p>🌸 **Joyeux mois de novembre !** 🌸</p>
+    <p>Je te souhaite un mois rempli de <span class="highlight">bonnes nouvelles</span>, de réussite dans tes projets, de santé, de sérénité et de moments inoubliables.</p>
+    <p>Que les portes qui doivent s'ouvrir s'ouvrent, que tes efforts portent leurs fruits et que même les petites choses rendent tes journées belles.</p>
+    <p style="font-size:1.15rem;color:#ffd879;font-weight:800">Novembre sera un beau chapitre. Profite de chaque instant ! 💜</p>
+  </section>
+  <div class="signature">Avec une belle pensée pour toi 💜</div>
+  <div class="footer">Un nouveau mois, une nouvelle énergie, de nouvelles possibilités.</div>
+</main>
+<script>
+const button=document.getElementById('reveal');
+const wish=document.getElementById('wish');
+button.addEventListener('click',()=>{
+  const opened=wish.classList.toggle('show');
+  button.textContent=opened?'Relire ton message 💜':'Découvrir ton message 💌';
+  if(opened) wish.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+</script>
+</body>
+</html>
